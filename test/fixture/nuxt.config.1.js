@@ -9,7 +9,7 @@ module.exports = {
     },
     modules: [
         ['@@', [
-            '~/assets/sass/colors.scss'
+            '~/assets/stylus/colors.styl'
         ]]
     ],
 }

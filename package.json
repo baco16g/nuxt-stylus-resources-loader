@@ -1,17 +1,16 @@
 {
-  "name": "nuxt-sass-resources-loader",
+  "name": "nuxt-stylus-resources-loader",
   "version": "2.0.5",
-  "description": "SASS resources (e.g. variables, mixins etc.) module for NuxtJs",
+  "description": "STYLUS resources (e.g. variables, mixins etc.) module for NuxtJs",
   "main": "index.js",
   "scripts": {
     "dev": "nuxt test/fixture",
-    "test": "jest",
-    "release": "standard-version && git push --follow-tags && npm publish"
+    "test": "jest"
   },
   "keywords": [
     "nuxt",
-    "sass",
-    "sass-resources-loader",
+    "stylus",
+    "stylus-resources-loader",
     "module"
   ],
   "author": {
@@ -25,7 +24,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git@github.com:anteriovieira/nuxt-sass-resources-loader.git"
+    "url": "git@github.com:baco16g/nuxt-stylus-resources-loader.git"
   },
   "homepage": "https://github.com/anteriovieira/nuxt-sass-resources-loader",
   "dependencies": {
@@ -37,6 +36,7 @@
     "jsdom": "^11.11.0",
     "node-sass": "^4.9.0",
     "nuxt": "^1.4.0",
-    "sass-loader": "^6.0.7"
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2"
   }
 }

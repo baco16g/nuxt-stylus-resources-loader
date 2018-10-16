@@ -1,3 +1,5 @@
+This package is a Stylus port of nuxt-sass-resources-loader
+
 # nuxt-sass-resources-loader
 
 [![npm](https://img.shields.io/npm/v/nuxt-sass-resources-loader.svg)](https://www.npmjs.com/package/nuxt-sass-resources-loader)
@@ -40,14 +42,14 @@ module.exports = {
     ['nuxt-sass-resources-loader', {
         resources: '@/path/to/resources.sass'
     }],
-    
+
     // or from the npm package
     ['nuxt-sass-resources-loader', 'my-package/sass/resources.scss']
   ],
 }
 ```
 
-> 
+>
 
 with sass resources option. require v1.1+
 

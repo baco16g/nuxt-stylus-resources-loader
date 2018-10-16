@@ -4,12 +4,12 @@ const defaults = {
     resources: []
 }
 
-module.exports = function nuxtSassResourcesLoader (moduleOptions = {}) {
+module.exports = function nuxtStylusResourcesLoader (moduleOptions = {}) {
     if (typeof moduleOptions === 'string' || Array.isArray(moduleOptions)) {
         moduleOptions = {resources: moduleOptions}
     }
 
-    const options = Object.assign({}, defaults, {resources: this.options.sassResources}, moduleOptions)
+    const options = Object.assign({}, defaults, {resources: this.options.stylusResources}, moduleOptions)
 
     // Casts the provided resource as an array if it's not one.
     options.resources = Array.isArray(options.resources) ? options.resources : [options.resources]
@@ -38,8 +38,8 @@ module.exports = function nuxtSassResourcesLoader (moduleOptions = {}) {
 }
 
 function extendV1(config, { sassResourcesLoader }) {
-    const sassLoader = config.module.rules.filter(({ test = '' }) => {
-        return ['/\\.sass$/', '/\\.scss$/'].indexOf(test.toString()) !== -1
+    const stylusLoader = config.module.rules.filter(({ test = '' }) => {
+        return ['/\\.styl(us)?$/'].indexOf(test.toString()) !== -1
     })
     const vueLoader = config.module.rules.find(({ test = '' }) => {
         return test.toString() === '/\\.vue$/'
@@ -48,23 +48,23 @@ function extendV1(config, { sassResourcesLoader }) {
     const loaders = vueLoader.options.loaders
 
     Object.keys(loaders).forEach(loader => {
-        if (['sass', 'scss'].indexOf(loader) !== -1) {
+        if (['styl', 'stylus'].indexOf(loader) !== -1) {
             loaders[loader].push(sassResourcesLoader)
         }
     })
 
-    Object.keys(sassLoader).forEach(loader => {
-        sassLoader[loader].use.push(sassResourcesLoader)
+    Object.keys(stylusLoader).forEach(loader => {
+        stylusLoader[loader].use.push(sassResourcesLoader)
     })
 }
 
 function extend(config, { sassResourcesLoader }) {
-    const sassLoaders = config.module.rules.filter(({ test = '' }) => {
-        return ['/\\.sass$/', '/\\.scss$/'].indexOf(test.toString()) !== -1
+    const stylusLoaders = config.module.rules.filter(({ test = '' }) => {
+        return ['/\\.styl(us)?$/'].indexOf(test.toString()) !== -1
     })
 
-    for (const sassLoader of sassLoaders) {
-        for (const rule of sassLoader.oneOf) {
+    for (const stylusLoader of stylusLoaders) {
+        for (const rule of stylusLoader.oneOf) {
             rule.use.push(sassResourcesLoader)
         }
     }

@@ -10,8 +10,8 @@ module.exports = {
     modules: [
         '@@'
     ],
-    sassResources: [
-        '@/assets/sass/colors.scss',
-        '@/assets/sass/variables.scss',
+    stylusResources: [
+        '@/assets/stylus/colors.styl',
+        '@/assets/stylus/variables.styl',
     ]
 }
