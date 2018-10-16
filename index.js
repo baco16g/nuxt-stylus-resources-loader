@@ -41,7 +41,7 @@ function extendV1(config, { sassResourcesLoader }) {
     const sassLoader = config.module.rules.filter(({ test = '' }) => {
         return ['/\\.sass$/', '/\\.scss$/'].indexOf(test.toString()) !== -1
     })
-  const vueLoader = config.module.rules.find(({ test = '' }) => {
+    const vueLoader = config.module.rules.find(({ test = '' }) => {
         return test.toString() === '/\\.vue$/'
     })
 
